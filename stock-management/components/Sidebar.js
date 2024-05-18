@@ -1,6 +1,7 @@
 "use client";
 
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link } from "@nextui-org/react"; // Doğru bileşen adları
+import { Navbar, Button, Link } from "@nextui-org/react"; // Doğru bileşen adları
+import '../src/styles/globals.css'; // Doğru yolu kontrol ettim
 
 const Sidebar = () => {
   const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
@@ -28,42 +29,44 @@ const Sidebar = () => {
   ];
 
   return (
-    <Navbar isBordered variant="floating">
-      <NavbarBrand>
-        <div className="text-white">My App</div>
-      </NavbarBrand>
-      <NavbarContent>
-        {menuItems.map((item) => (
-          <NavbarItem key={item.name}>
-            {item.subItems ? (
-              <div>
-                <div className={currentPath.startsWith(item.subItems[0].path) ? 'active' : ''}>
+    <div className="sidebar">
+      <Navbar variant="static">
+        <Navbar.Brand>
+          <div className="text-white">My App</div>
+        </Navbar.Brand>
+        <Navbar.Content>
+          {menuItems.map((item) => (
+            <Navbar.Item key={item.name}>
+              {item.subItems ? (
+                <div className="dropdown">
+                  <Button className={currentPath.startsWith(item.subItems[0].path) ? 'active' : ''}>
+                    {item.name}
+                  </Button>
+                  <div className="dropdown-content">
+                    {item.subItems.map((subItem) => (
+                      <Link
+                        key={subItem.name}
+                        href={subItem.path}
+                        className={currentPath === subItem.path ? 'active' : 'text-white'}
+                      >
+                        {subItem.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  href={item.path}
+                  className={currentPath === item.path ? 'active' : 'text-white'}
+                >
                   {item.name}
-                </div>
-                <div>
-                  {item.subItems.map((subItem) => (
-                    <Link
-                      key={subItem.name}
-                      href={subItem.path}
-                      className={currentPath === subItem.path ? 'active' : 'text-white'}
-                    >
-                      {subItem.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ) : (
-              <Link
-                href={item.path}
-                className={currentPath === item.path ? 'active' : 'text-white'}
-              >
-                {item.name}
-              </Link>
-            )}
-          </NavbarItem>
-        ))}
-      </NavbarContent>
-    </Navbar>
+                </Link>
+              )}
+            </Navbar.Item>
+          ))}
+        </Navbar.Content>
+      </Navbar>
+    </div>
   );
 };
 
