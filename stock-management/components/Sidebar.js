@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { Link, Switch, Navbar, Text } from "@nextui-org/react";
+import { Switch, Navbar, NavbarBrand, NavbarContent, NavbarItem, Text } from "@nextui-org/react"; // Doğru bileşen adları
 import { useTheme as useNextTheme } from 'next-themes';
 import { MoonIcon, SunIcon } from '@heroicons/react/outline';
 
@@ -16,24 +16,24 @@ export default function Sidebar() {
 
   return (
     <Navbar isBordered variant="floating">
-      <Navbar.Brand>
+      <NavbarBrand>
         <Text h4 className="text-white">My App</Text>
-      </Navbar.Brand>
-      <Navbar.Content>
+      </NavbarBrand>
+      <NavbarContent>
         <Switch 
           checked={isDark}
           iconOn={<MoonIcon />}
           iconOff={<SunIcon />}
           onChange={handleThemeChange}
         />
-      </Navbar.Content>
+      </NavbarContent>
       <Navbar.Collapse>
-        <Navbar.CollapseItem>
+        <NavbarItem>
           <Link href="/" className="text-white">Dashboard</Link>
-        </Navbar.CollapseItem>
-        <Navbar.CollapseItem>
+        </NavbarItem>
+        <NavbarItem>
           <Link href="/orders" className="text-white">Orders</Link>
-        </Navbar.CollapseItem>
+        </NavbarItem>
         <Navbar.CollapseItem title="Products">
           <Link href="/products" className="text-white">Products List</Link>
           <Link href="/products/category" className="text-white">Category</Link>
