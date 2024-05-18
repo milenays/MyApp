@@ -2,6 +2,7 @@
 
 import { Navbar, Button, Link } from "@nextui-org/react"; // Doğru bileşen adları
 import '../src/styles/globals.css'; // Doğru yolu kontrol ettim
+import React from 'react';
 
 const Sidebar = () => {
   const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
