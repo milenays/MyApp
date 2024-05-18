@@ -1,6 +1,6 @@
 import { MongoClient } from 'mongodb';
 
-const uri = 'mongodb://localhost:27017'; // MongoDB'nin kurulu olduğu yerel bağlantı dizesi
+const uri = process.env.MONGODB_URI;
 const options = {};
 
 let client;
