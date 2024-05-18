@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import '../src/styles/globals.css'; // Doğru import yolu
-import Sidebar from '../components/Sidebar'; // Sidebar bileşenini import edin
+import '../src/styles/globals.css';
+import Sidebar from '../components/Sidebar';
+import { ThemeProvider } from 'next-themes';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,10 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex">
-          <Sidebar />
-          <main className="flex-1">{children}</main>
-        </div>
+        <ThemeProvider attribute="class">
+          <div className="flex">
+            <Sidebar />
+            <main className="flex-1">{children}</main>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
