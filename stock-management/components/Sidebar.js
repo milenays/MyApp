@@ -1,33 +1,14 @@
 "use client";
 
-import { useState } from 'react';
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Switch } from "@nextui-org/react"; // Doğru bileşen adları
-import { useTheme as useNextTheme } from 'next-themes';
-import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react"; // Doğru bileşen adları
 
 export default function Sidebar() {
-  const { setTheme } = useNextTheme();
-  const [isDark, setIsDark] = useState(true);
-
-  const handleThemeChange = () => {
-    setIsDark(!isDark);
-    setTheme(isDark ? 'light' : 'dark');
-  };
-
   return (
     <Navbar isBordered variant="floating">
       <NavbarBrand>
         <div className="text-white">My App</div>
       </NavbarBrand>
       <NavbarContent>
-        <Switch 
-          checked={isDark}
-          iconOn={<MoonIcon />}
-          iconOff={<SunIcon />}
-          onChange={handleThemeChange}
-        />
-      </NavbarContent>
-      <Navbar.Collapse>
         <NavbarItem>
           <a href="/" className="text-white">Dashboard</a>
         </NavbarItem>
@@ -45,7 +26,7 @@ export default function Sidebar() {
           <a href="/settings/integrations" className="text-white">Integrations</a>
           <a href="/settings/templates" className="text-white">Templates</a>
         </Navbar.CollapseItem>
-      </Navbar.Collapse>
+      </NavbarContent>
     </Navbar>
   );
 }
