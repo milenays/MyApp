@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Collapse, Text, Link, Switch } from '@nextui-org/react';
 import { useTheme as useNextTheme } from 'next-themes';
-import { SunIcon, MoonIcon } from '@heroicons/react/outline';
+import { MoonIcon, SunIcon } from '@heroicons/react/outline';
 
 export default function Sidebar() {
   const { setTheme } = useNextTheme();
