@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '../src/styles/globals.css'; // Doğru import yolu
-import Sidebar from '../stock-management/components/Sidebar'; // Sidebar bileşenini import edin
+import Sidebar from '../components/Sidebar'; // Sidebar bileşenini import edin
 
 const inter = Inter({ subsets: ['latin'] });
 
