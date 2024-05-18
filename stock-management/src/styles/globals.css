@@ -1,1 +1,4 @@
-@import '@nextui-org/react/dist/nextui.css'; // NextUI için
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import '@nextui-org/react/dist/nextui.css';
