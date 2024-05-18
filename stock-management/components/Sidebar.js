@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { Switch, Navbar, NavbarBrand, NavbarContent, NavbarItem, Text } from "@nextui-org/react"; // Doğru bileşen adları
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Switch, Text } from "@nextui-org/react"; // Doğru bileşen adları
 import { useTheme as useNextTheme } from 'next-themes';
 import { MoonIcon, SunIcon } from '@heroicons/react/outline';
 
@@ -17,7 +17,7 @@ export default function Sidebar() {
   return (
     <Navbar isBordered variant="floating">
       <NavbarBrand>
-        <Text h4 className="text-white">My App</Text>
+        <Text b className="text-white">My App</Text>
       </NavbarBrand>
       <NavbarContent>
         <Switch 
@@ -29,21 +29,21 @@ export default function Sidebar() {
       </NavbarContent>
       <Navbar.Collapse>
         <NavbarItem>
-          <Link href="/" className="text-white">Dashboard</Link>
+          <a href="/" className="text-white">Dashboard</a>
         </NavbarItem>
         <NavbarItem>
-          <Link href="/orders" className="text-white">Orders</Link>
+          <a href="/orders" className="text-white">Orders</a>
         </NavbarItem>
         <Navbar.CollapseItem title="Products">
-          <Link href="/products" className="text-white">Products List</Link>
-          <Link href="/products/category" className="text-white">Category</Link>
-          <Link href="/products/brand" className="text-white">Brand</Link>
-          <Link href="/products/tax" className="text-white">Tax</Link>
-          <Link href="/products/tag" className="text-white">Tag</Link>
+          <a href="/products" className="text-white">Products List</a>
+          <a href="/products/category" className="text-white">Category</a>
+          <a href="/products/brand" className="text-white">Brand</a>
+          <a href="/products/tax" className="text-white">Tax</a>
+          <a href="/products/tag" className="text-white">Tag</a>
         </Navbar.CollapseItem>
         <Navbar.CollapseItem title="Settings">
-          <Link href="/settings/integrations" className="text-white">Integrations</Link>
-          <Link href="/settings/templates" className="text-white">Templates</Link>
+          <a href="/settings/integrations" className="text-white">Integrations</a>
+          <a href="/settings/templates" className="text-white">Templates</a>
         </Navbar.CollapseItem>
       </Navbar.Collapse>
     </Navbar>
