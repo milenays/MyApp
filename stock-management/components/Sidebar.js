@@ -15,17 +15,27 @@ export default function Sidebar() {
         <NavbarItem>
           <a href="/orders" className="text-white">Orders</a>
         </NavbarItem>
-        <Navbar.CollapseItem title="Products">
+        <NavbarItem>
           <a href="/products" className="text-white">Products List</a>
+        </NavbarItem>
+        <NavbarItem>
           <a href="/products/category" className="text-white">Category</a>
+        </NavbarItem>
+        <NavbarItem>
           <a href="/products/brand" className="text-white">Brand</a>
+        </NavbarItem>
+        <NavbarItem>
           <a href="/products/tax" className="text-white">Tax</a>
+        </NavbarItem>
+        <NavbarItem>
           <a href="/products/tag" className="text-white">Tag</a>
-        </Navbar.CollapseItem>
-        <Navbar.CollapseItem title="Settings">
+        </NavbarItem>
+        <NavbarItem>
           <a href="/settings/integrations" className="text-white">Integrations</a>
+        </NavbarItem>
+        <NavbarItem>
           <a href="/settings/templates" className="text-white">Templates</a>
-        </Navbar.CollapseItem>
+        </NavbarItem>
       </NavbarContent>
     </Navbar>
   );
