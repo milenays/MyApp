@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import { Collapse, Text, Link, Switch } from '@nextui-org/react';
 import { useTheme as useNextTheme } from 'next-themes';
