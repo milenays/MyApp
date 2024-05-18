@@ -1,6 +1,6 @@
-// src/pages/_app.js
 import { NextUIProvider } from '@nextui-org/react';
 import '../styles/globals.css';
+import '../styles/tailwind.css';
 
 function MyApp({ Component, pageProps }) {
   return (
