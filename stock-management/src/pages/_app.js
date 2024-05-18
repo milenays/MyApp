@@ -1,6 +1,6 @@
 import { NextUIProvider } from '@nextui-org/react';
 import '../styles/globals.css';
-import '@nextui-org/react/dist/nextui.css'; // NextUI için stil dosyasını burada içe aktarıyoruz
+import '@nextui-org/theme/dist/styles.css'; // NextUI stil dosyasının doğru yolu
 
 function MyApp({ Component, pageProps }) {
   return (
