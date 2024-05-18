@@ -1,10 +1,9 @@
 "use client";
 
-import { useRouter } from 'next/router';
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link } from "@nextui-org/react"; // Doğru bileşen adları
 
 const Sidebar = () => {
-  const router = useRouter();
+  const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
 
   const menuItems = [
     { name: 'Dashboard', path: '/' },
@@ -38,7 +37,7 @@ const Sidebar = () => {
           <NavbarItem key={item.name}>
             {item.subItems ? (
               <div>
-                <div className={router.pathname.startsWith(item.subItems[0].path) ? 'active' : ''}>
+                <div className={currentPath.startsWith(item.subItems[0].path) ? 'active' : ''}>
                   {item.name}
                 </div>
                 <div>
@@ -46,7 +45,7 @@ const Sidebar = () => {
                     <Link
                       key={subItem.name}
                       href={subItem.path}
-                      className={router.pathname === subItem.path ? 'active' : 'text-white'}
+                      className={currentPath === subItem.path ? 'active' : 'text-white'}
                     >
                       {subItem.name}
                     </Link>
@@ -56,7 +55,7 @@ const Sidebar = () => {
             ) : (
               <Link
                 href={item.path}
-                className={router.pathname === item.path ? 'active' : 'text-white'}
+                className={currentPath === item.path ? 'active' : 'text-white'}
               >
                 {item.name}
               </Link>
