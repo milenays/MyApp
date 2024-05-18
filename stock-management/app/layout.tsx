@@ -1,7 +1,7 @@
 import { NextUIProvider } from '@nextui-org/react';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
-import Sidebar from '../components/Sidebar';
-import '../styles/globals.css';
+import Sidebar from '../components/Sidebar'; // Doğru yol
+import '../src/styles/globals.css'; // Doğru yol
 
 export const metadata = {
   title: 'My App',
