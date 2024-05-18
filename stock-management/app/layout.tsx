@@ -1,6 +1,6 @@
 import { NextUIProvider } from '@nextui-org/react';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
-import Sidebar from '../components/Sidebar'; // Doğru yol
+import Sidebar from '../app/components/Sidebar'; // Doğru yol
 import '../src/styles/globals.css'; // Doğru yol
 import { Metadata } from 'next';
 
