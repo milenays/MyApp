@@ -1,7 +1,6 @@
-// src/pages/_app.js
 import { NextUIProvider } from '@nextui-org/react';
 import '../styles/globals.css';
-import '../styles/tailwind.css';
+import '@nextui-org/react/dist/nextui.css'; // NextUI için stil dosyasını burada içe aktarıyoruz
 
 function MyApp({ Component, pageProps }) {
   return (
