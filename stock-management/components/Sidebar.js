@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { Collapse, Text, Link, Switch } from '@nextui-org/react';
+import { Collapse, Link, Switch, Text } from "@nextui-org/react"; // Doğru import yolu
 import { useTheme as useNextTheme } from 'next-themes';
 import { MoonIcon, SunIcon } from '@heroicons/react/outline';
 
