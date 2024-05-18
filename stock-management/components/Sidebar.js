@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from 'react';
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Switch, Text } from "@nextui-org/react"; // Doğru bileşen adları
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Switch } from "@nextui-org/react"; // Doğru bileşen adları
 import { useTheme as useNextTheme } from 'next-themes';
-import { MoonIcon, SunIcon } from '@heroicons/react/outline';
+import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
 
 export default function Sidebar() {
   const { setTheme } = useNextTheme();
@@ -17,7 +17,7 @@ export default function Sidebar() {
   return (
     <Navbar isBordered variant="floating">
       <NavbarBrand>
-        <Text b className="text-white">My App</Text>
+        <div className="text-white">My App</div>
       </NavbarBrand>
       <NavbarContent>
         <Switch 
